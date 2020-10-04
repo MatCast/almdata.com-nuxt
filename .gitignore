@@ -88,3 +88,8 @@ sw.*
 
 # Vim swap files
 *.swp
+
+#### MY PROJECT ###
+notes.md
+/static/images
+/assets/images
