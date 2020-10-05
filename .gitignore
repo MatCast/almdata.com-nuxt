@@ -91,5 +91,7 @@ sw.*
 
 #### MY PROJECT ###
 notes.md
-/static/images
+
+# images to be pushed at last
+/static/blog
 /assets/images

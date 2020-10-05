@@ -1,9 +1,17 @@
 <template>
-  <article>
-    <img
-      :src="require(`~/assets/images/${article.image}`)"
-      alt="Prova Immagine"
-    />
+  <article class="content column is-12">
+    <img :src="`/blog/${article.image}`" alt="article.img-alt" />
+    <nav>
+      <ul>
+        <li v-for="link of article.toc" :key="link.id">
+          <NuxtLink
+            :to="`#${link.id}`"
+            :class="{ 'py-2': link.depth === 2, 'ml-2 pb-2': link.depth === 3 }"
+            >{{ link.text }}</NuxtLink
+          >
+        </li>
+      </ul>
+    </nav>
     <h1>{{ article.title }}</h1>
     <nuxt-content :document="article" />
     <p>Post last updated: {{ formatDate(article.updatedAt) }}</p>
@@ -35,5 +43,14 @@ h1 {
 .nuxt-content h2 {
   font-weight: bold;
   font-size: 28px;
+}
+
+.icon.icon-link {
+  background-image: url('~assets/svg/icon-hashtag.svg');
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  margin-right: 0.5rem;
 }
 </style>
