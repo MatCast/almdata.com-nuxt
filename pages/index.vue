@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <h1>BLA</h1>
-    <div class="columns is-mobile">
+    <div class="columns is-multiline">
       <card title="Free" icon="github">
         Open source on <a href="https://github.com/buefy/buefy"> GitHub </a>
       </card>
@@ -15,6 +15,18 @@
         <a href="http://bulma.io/"> Bulma </a>
       </card>
 
+      <card title="Lightweight" icon="arrange-bring-to-front">
+        No other internal dependency
+      </card>
+      <card title="Lightweight" icon="arrange-bring-to-front">
+        No other internal dependency
+      </card>
+      <card title="Lightweight" icon="arrange-bring-to-front">
+        No other internal dependency
+      </card>
+      <card title="Lightweight" icon="arrange-bring-to-front">
+        No other internal dependency
+      </card>
       <card title="Lightweight" icon="arrange-bring-to-front">
         No other internal dependency
       </card>

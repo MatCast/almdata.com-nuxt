@@ -1,5 +1,5 @@
 <template>
-  <div class="column">
+  <div class="column is-4">
     <div class="card">
       <header class="card-header">
         <p class="card-header-title has-text-grey">

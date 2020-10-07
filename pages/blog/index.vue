@@ -1,35 +1,42 @@
 <template>
-  <section class="section">
-    <h1>BLA</h1>
-    <div class="columns is-mobile">
-      <card title="Free" icon="github">
-        Open source on <a href="https://github.com/buefy/buefy"> GitHub </a>
-      </card>
-
-      <card title="Responsive" icon="cellphone-link">
-        <b class="has-text-grey"> Every </b> component is responsive
-      </card>
-
-      <card title="Modern" icon="alert-decagram">
-        Built with <a href="https://vuejs.org/"> Vue.js </a> and
-        <a href="http://bulma.io/"> Bulma </a>
-      </card>
-
-      <card title="Lightweight" icon="arrange-bring-to-front">
-        No other internal dependency
-      </card>
+  <div class="container columns is-multiline">
+    <!-- <h1 class="title">Blog Posts</h1> -->
+    <div v-for="article of articles" :key="article.slug" class="column is-4">
+      <div class="card">
+        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img :src="`/blog/${article.image}`" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <h2>{{ article.title }}</h2>
+            <!-- <p>by {{ article.author.name }}</p> -->
+            <p>{{ article.description }}</p>
+          </div>
+        </NuxtLink>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import Card from '~/components/Card'
-
 export default {
-  name: 'Blog',
+  async asyncData({ $content, params }) {
+    const articles = await $content('articles', params.slug)
+      .only(['title', 'description', 'image', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .fetch()
 
-  components: {
-    Card,
+    return {
+      articles,
+    }
   },
 }
 </script>
+
+<style lang="css">
+.card {
+  height: 100%;
+}
+</style>

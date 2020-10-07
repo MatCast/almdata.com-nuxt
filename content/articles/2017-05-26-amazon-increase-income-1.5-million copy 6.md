@@ -2,7 +2,7 @@
 layout: post
 title: Something about Pytorch
 date: 2019-07-26 15:05:55 +0300
-image: ~assets/images/single_post_4.jpg
+image: single_post_4.jpg
 author: myman
 tags: pytorch
 category: Deep Learning

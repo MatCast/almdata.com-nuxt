@@ -19,3 +19,10 @@ export default {
   },
 }
 </script>
+
+<style lang="css">
+.main-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+</style>
