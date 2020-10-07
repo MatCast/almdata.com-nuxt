@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Amazon increase income 1.5 Million
+title: First Post
 date: 2017-05-26 15:05:55 +0300
 image: single_post.jpg
 img-alt: Alt Text
-author: uixgeek
+author: team_1
 tags: UX design
 category: Web Development
 ---

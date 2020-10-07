@@ -2,8 +2,8 @@
   <div>
     <TheHeader />
 
-    <section class="main-content columns">
-      <div class="container column is-12">
+    <section class="columns">
+      <div class="container column is-12 main-content">
         <nuxt />
       </div>
     </section>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .main-content {
   max-width: 720px;
   margin: 0 auto;

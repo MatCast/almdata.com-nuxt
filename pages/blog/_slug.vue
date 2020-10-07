@@ -1,5 +1,6 @@
 <template>
   <article class="content column is-12">
+    <PostAuthor :author="author" />
     <img :src="`/blog/${article.image}`" alt="article.img-alt" />
     <nav>
       <ul>
@@ -20,10 +21,19 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
-
-    return { article }
+  async asyncData({ $content, params, error }) {
+    let article, author
+    try {
+      article = await $content('articles', params.slug).fetch()
+    } catch (e) {
+      return error({ statusCode: 404, message: 'Page not found' })
+    }
+    try {
+      author = await $content('team', article.author).fetch()
+    } catch (e) {
+      author = {}
+    }
+    return { article, author }
   },
   data() {
     return {}

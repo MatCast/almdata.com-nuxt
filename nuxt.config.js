@@ -7,7 +7,8 @@ export default {
     titleTemplate(titleChunk) {
       return titleChunk ? `${titleChunk} - almdata.com` : 'almdata.com'
     },
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8',
       },
       {
@@ -34,7 +35,7 @@ export default {
   css: ['@/assets/styles/styles.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: ['~/plugins/empty_object.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
