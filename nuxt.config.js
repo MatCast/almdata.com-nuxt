@@ -4,9 +4,10 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'almdata-website',
-    meta: [
-      {
+    titleTemplate(titleChunk) {
+      return titleChunk ? `${titleChunk} - almdata.com` : 'almdata.com'
+    },
+    meta: [{
         charset: 'utf-8',
       },
       {
@@ -16,7 +17,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '',
+        content:
+          'Machine Learning Solutions for Businesses. Use your data to the full power.',
       },
     ],
     link: [

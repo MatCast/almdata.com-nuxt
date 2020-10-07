@@ -1,5 +1,6 @@
 <template>
   <section class="section">
+    <!-- <ul><li v-for="item in items"></li></ul> -->
     <h2 class="title is-3 has-text-grey">
       "Just start <b-icon icon="rocket" size="is-large" />"
     </h2>
@@ -8,3 +9,13 @@
     </h3>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: 'Inspire',
+    }
+  },
+}
+</script>
