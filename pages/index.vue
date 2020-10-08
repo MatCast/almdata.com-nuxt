@@ -42,10 +42,8 @@ export default {
   components: {
     Card,
   },
-  data() {
-    return {
-      title: 'Home',
-    }
+  head() {
+    return { title: 'Home' }
   },
 }
 </script>

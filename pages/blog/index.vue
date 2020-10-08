@@ -23,6 +23,9 @@ export default {
     }
     return { articles }
   },
+  head() {
+    return { title: 'Blog' }
+  },
 }
 </script>
 

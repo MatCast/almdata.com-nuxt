@@ -12,10 +12,8 @@
 
 <script>
 export default {
-  data() {
-    return {
-      title: 'Inspire',
-    }
+  head() {
+    return { title: 'Inspire' }
   },
 }
 </script>

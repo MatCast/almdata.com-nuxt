@@ -30,5 +30,8 @@ export default {
     }
     return { articles, tag }
   },
+  head() {
+    return { title: 'Blog' }
+  },
 }
 </script>
