@@ -1,6 +1,7 @@
 <template>
   <article class="content column is-12">
     <PostAuthor :author="author" />
+    <PostTags :tags="article.tags ? article.tags : ''" />
     <img :src="`/blog/${article.image}`" alt="article.img-alt" />
     <nav>
       <ul>

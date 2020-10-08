@@ -1,36 +1,24 @@
 <template>
-  <div class="container columns is-multiline">
-    <!-- <h1 class="title">Blog Posts</h1> -->
-    <div v-for="article of articles" :key="article.slug" class="column is-4">
-      <div class="card">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img :src="`/blog/${article.image}`" />
-            </figure>
-          </div>
-          <div class="card-content">
-            <h2>{{ article.title }}</h2>
-            <!-- <p>by {{ article.author.name }}</p> -->
-            <p>{{ article.description }}</p>
-          </div>
-        </NuxtLink>
-      </div>
-    </div>
-  </div>
+  <section id="posts">
+    <MultiArticlesFeed :articles="articles ? articles : []">
+    </MultiArticlesFeed>
+  </section>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'image', 'slug'])
-      .sortBy('createdAt', 'asc')
-      .fetch()
-
-    return {
-      articles,
+  async asyncData({ $content, params, error }) {
+    let articles
+    try {
+      articles = await $content('articles', params.slug)
+        .only(['title', 'description', 'image', 'tags', 'slug'])
+        .sortBy('createdAt', 'asc')
+        .fetch()
+    } catch (e) {
+      articles = []
+      return error({ statusCode: 404, message: 'Page not found' })
     }
+    return { articles }
   },
 }
 </script>

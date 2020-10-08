@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$isEmpty(author)" class="authoring">
+  <div v-if="!$isEmpty(author)">
     <img :src="author.image" />
     <div>
       <h4>Author</h4>
