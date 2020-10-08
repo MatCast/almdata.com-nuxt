@@ -8,6 +8,8 @@ $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
 $pinkish: #ff99aa;
 $pinkish-invert: findColorInvert($pinkish);
+$dark: #282f4b;
+$dark-invert: findColorInvert($pinkish);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: ("white": ($white, $black),
