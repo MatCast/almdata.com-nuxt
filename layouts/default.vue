@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <main>
     <TheHeader />
 
-    <section class="columns">
+    <div class="main-container columns">
       <div class="container column is-12 main-content">
         <nuxt />
       </div>
-    </section>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.main-content {
+.main-container {
   max-width: 720px;
   margin: 0 auto;
 }
