@@ -1,5 +1,6 @@
 <template>
   <section id="posts">
+    <AppSearchInput @updatedArticles="updateArticles"> </AppSearchInput>
     <MultiArticlesFeed :articles="articles ? articles : []">
     </MultiArticlesFeed>
   </section>
@@ -22,6 +23,11 @@ export default {
       return error({ statusCode: 404, message: 'Page not found' })
     }
     return { articles }
+  },
+  methods: {
+    updateArticles(articles) {
+      this.articles = articles
+    },
   },
   head() {
     return { title: 'Blog' }
