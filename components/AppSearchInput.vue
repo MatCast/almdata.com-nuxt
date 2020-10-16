@@ -11,7 +11,7 @@
         icon-right-clickable
         @icon-click="searchIconClick"
         @icon-right-click="closeIconClick"
-        @keyup.enter.native="searchIconClick"
+        @keyup.native="searchIconClick"
       >
       </b-input>
     </b-field>
