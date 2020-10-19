@@ -24,24 +24,16 @@ export default {
     return {
       searchQuery: '',
       articles: [],
+      pageNum: 0,
     }
   },
   methods: {
-    async searchIconClick(searchQuery) {
-      this.articles = await this.$content('articles')
-        .only(['title', 'description', 'image', 'tags', 'slug'])
-        .search(this.searchQuery)
-        .sortBy('createdAt', 'asc')
-        .fetch()
-      this.$emit('updatedArticles', this.articles)
+    searchIconClick() {
+      this.$emit('updatedArticles', this.searchQuery, 0, true)
     },
-    async closeIconClick(searchQuery) {
+    closeIconClick() {
       this.searchQuery = ''
-      this.articles = await this.$content('articles')
-        .only(['title', 'description', 'image', 'tags', 'slug'])
-        .sortBy('createdAt', 'asc')
-        .fetch()
-      this.$emit('updatedArticles', this.articles)
+      this.$emit('updatedArticles', this.searchQuery, 0, true)
     },
   },
 }

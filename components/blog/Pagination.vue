@@ -20,18 +20,14 @@
 
 <script>
 export default {
-  async asyncData({ $content, params, error }) {
-    const articles = await $content('articles').skip(2).fetch()
-    if (articles.length) {
-      articles.foreach((article) => {
-        console.log(article.title)
-      })
-    }
-    return articles
+  props: {
+    total: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
-      total: 200,
       current: 1,
       perPage: process.env.perPage,
       rangeBefore: 3,
@@ -39,8 +35,8 @@ export default {
     }
   },
   methods: {
-    pageChanged(n) {
-      this.$emit('changedPage', n - 1)
+    pageChanged(numPage) {
+      this.$emit('updatedArticles', '', numPage - 1, false)
     },
   },
 }
