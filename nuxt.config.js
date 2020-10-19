@@ -1,6 +1,10 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+  // enviroemntal variables
+  env: {
+    perPage: 5,
+  },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
